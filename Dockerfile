@@ -41,7 +41,6 @@ RUN groupadd supergroup && \
     default-libmysqlclient-dev \
     freetds-bin \
     freetds-dev \
-    libaio1 \
     libecpg-dev \
     libffi-dev \
     libldap2-dev \
