@@ -11,7 +11,11 @@
 
 services:
   superset:
-    image: amancevice/superset:6.1.0rc2
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PYTHON_VERSION: "3.12.11"
     environment:
       - SERVICE_URL_SUPERSET_8088
       - SECRET_KEY=${SERVICE_BASE64_64_SUPERSETSECRETKEY}

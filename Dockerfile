@@ -50,12 +50,13 @@ RUN groupadd supergroup && \
     libsasl2-modules-gssapi-mit \
     libssl-dev && \
     apt-get clean && \
-    pip install -U pip
+    printf 'setuptools<81\n' > /tmp/build-constraints.txt && \
+    pip install -U pip 'setuptools<81' wheel
 
 # Install pips
 COPY requirements*.txt ./
-RUN pip install -r requirements.txt && \
-    pip install -r requirements-dev.txt
+RUN pip install --build-constraint /tmp/build-constraints.txt -r requirements.txt && \
+    pip install --build-constraint /tmp/build-constraints.txt -r requirements-dev.txt
 
 # Configure application
 EXPOSE 8088
