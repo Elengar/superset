@@ -7,6 +7,7 @@ name = "pypi"
 apache-superset = {git = "https://github.com/Elengar/superset.git", ref = "master", extras = ["fastmcp"]}
 apache-superset-core = {git = "https://github.com/Elengar/superset.git", ref = "master", subdirectory = "superset-core"}
 cffi = "==1.17.1"
+numpy = "<2"
 pyopenssl = "==25.1.0"
 pytz = "==2025.2"
 
