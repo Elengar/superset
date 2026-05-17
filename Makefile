@@ -1,7 +1,7 @@
 ARCH             := linux/arm64
 REPO             := amancevice/superset
 PYTHON_VERSION   := $(shell cat .python-version)
-SUPERSET_VERSION := $(shell sed -nE 's/^apache-superset = "==([^"]+)"/\1/p' Pipfile)
+SUPERSET_VERSION := $(shell date +%Y.%-m.%-d)
 
 build: requirements-dev.txt
 	docker buildx build \
